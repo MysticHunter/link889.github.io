@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<script>
+			var map;
+			function initialize() {
+				var mapProp = {
+					center:new google.maps.LatLng(-1.2440755,-79.0995695),
+					zoom:9,
+					mapTypeId:google.maps.MapTypeId.ROADMAP
+				};
+				map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+			
+				$("#mapTab").on('shown.bs.tab', function() {
+					// Trigger map resize event so the google map works with bootstrap tabs
+					google.maps.event.trigger(map, 'resize');
+				});
+			}
+			
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+		<style>
+			.jumbotron h1 {
+				color: black;
+				font-size: 35px
+			}
+			body {
+				background-color: #990000;
+				color: white;
+			}
+			.carousel-inner > .item > img,
+			.carousel-inner > .item > a > img {
+				width: 200px;
+				height: 200px;
+				margin: auto;
+			}
+			.myborder {
+				border-radius:25px;
+				border-style: double;
+				background-color: cyan;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h3>Volcano Tungurahua</h3>
+			<ul class="nav nav-pills">
+				<li class="active"><a data-toggle="pill" href="#home">Home</a></li>
+				<li><a id="mapTab" data-toggle="pill" href="#location">Location</a></li>
+				<li><a data-toggle="pill" href="#video">Video</a></li>
+				<li><a data-toggle="pill" href="#facts">Facts</a></li>
+				<li><a data-toggle="pill" href="#story">Story</a></li>
+				<li><a data-toggle="pill" href="#citations">Citations</a></li>
+			</ul>
+			<div class="tab-content">
+				<div id="home" class="tab-pane fade in active">
+					<h3>Home</h3>
+					<div class="jumbotron">
+						<div class="container text-align">
+							<center>
+								<h1 class="myborder">Volcano Tungurahua erupted in Ecuador on 27th of February 2016.</h1>
+							</center>
+						</div>
+					</div>
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarousel" data-slide-to="1"></li>
+						</ol>
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTvrb0xKLVi1rwbfJ3qey3qP6Ehs_ZdLQQjvcgBf_rkFtr1I2ht" alt="before explosion" width="50" height="50">
+								<div class="carousel-caption">
+									<h3>Before Explosion</h3>
+									<p>This is a picture of the volcano before it erupted.</p>
+								</div>
+							</div>
+							<div class="item">
+								<img src="http://www.thetimes.co.uk/tto/multimedia/archive/00016/aavolcano_70128327_16563c.jpg" alt="after explosion" width="50" height="50">
+								<div class="carousel-caption">
+									<h3>After Explosion</h3>
+									<p>This is a picture of the volcano during the eruption.</p>
+								</div>
+							</div>
+							<!-- Left and right controls -->
+							<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+							</a>
+							<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div id="video" class="tab-pane fade">
+					<h3>Video</h3>
+					<center>
+						<iframe width="640" height="360" src="https://www.youtube.com/embed/NI7yi8DYhso" frameborder="0" allowfullscreen></iframe>
+					</center>
+				</div>
+				<div id="facts" class="tab-pane fade">
+					<h3>Facts</h3>
+					<h6>The last time the volcano erupted was 2014.</h6>
+					It is 16,480 feet tall.
+					<b>Tungurahue is a stratovolcano.</b>
+					Stratovolcanoes build up a lot of pressure before realizing the magma and ash making huge gas clouds.
+					</p>
+					You will need these five things to stay safe in a volcano eruption.
+					<ol>
+						<li>food</li>
+						<li>water</li>
+						<li>first aid kit</li>
+						<li>radio</li>
+						<li>protection for eyes and lungs (goggles or face mask)</li>
+					</ol>
+				</div>
+				<div id="location" class="tab-pane fade">
+					<h3>Location</h3>
+					<center>
+						<div id="googleMap" style="width:600px;height:500px;"></div>
+					</center>
+				</div>
+				<div id="story" class="tab-pane fade">
+					<h3>Story</h3>
+					<p>The Tungurahua volcano was pressurized.  Then the volcano exploded releasing tons of ash and lava.  It is still currently spewing a ton more ash.</p>
+				</div>
+				<div id="citations" class="tab-pane fade">
+					<h3>Citations</h3>
+					Soleimani, S. (Director). (2016). Reventador Volcano Erupting, January 2016 [Motion picture on Youtube]. Equador.
+					<br>
+					Tungurahua volcano: Strong vulcanian. (2016, February 27). Retrieved February 28, 2016, from http://www.volcanodiscovery.com/tungurahua/news.html
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
