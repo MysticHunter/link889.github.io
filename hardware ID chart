@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<title>Hardware Identification Chart</title>
+		<style>
+			body {
+				background-color:#66ff66
+				}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Hardware Identification Chart</h1>
+			</div>
+			<table style="width:100%" border="1" class="table table-striped">
+				<thead>
+					<tr>
+						<td>Picture</td>
+						<td>Name</td>
+						<td>Description</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td width="33%"><img src="hard drive.png" height="50%"> </td>
+						<td>Hard Drive</td>
+						<td>The hard drive is the permanent storage for data on your computer</td>
+					</tr>
+					<tr>
+						<td width="33%"><img src ="RAM.png" height ="40%">special thanks to Evan Moore</td>
+						<td>RAM</td>
+						<td>The RAM is the temporary memory for your computer</td>
+					</tr>
+					<tr>
+						<td width="33%"><img src ="power supply.png" height ="40%"></td>
+						<td>Power Supply</td>
+						<td>The power supply is your computers energy source</td>
+					</tr>
+					<tr>
+						<td width="33%"><img src ="Diskdriverainbow.png" height ="40%">special thanks to Alexander Watford</td>
+						<td>Disk Drive</td>
+						<td>The disk drive allows you to play Disks on your computer</td>
+					</tr>
+					<tr>
+						<td width="33%"><img src ="Titanx Graphics Card.png" height ="40%"> special thanks to Nolan Rodgers</td>
+						<td>Video Card</td>
+						<td>The video card allows you to see images and videos</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
